@@ -1,6 +1,4 @@
-import {
-  ArrowLeftIcon,
-} from "lucide-react";
+import { ArrowLeftIcon } from "lucide-react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import Title from "../components/Title";
 
@@ -11,7 +9,7 @@ function TaskPage() {
   const description = searchParams.get("description");
 
   return (
-    <div className="h-screen w-screen bg-slate-500 p-6">
+    <div className="flex h-screen w-screen justify-center bg-slate-500 p-6">
       <div className="w-[500px] space-y-4">
         <div className="relative mb-6 flex justify-center">
           <button
