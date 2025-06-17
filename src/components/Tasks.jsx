@@ -16,23 +16,24 @@ function Tasks({ tasks, onTaskClick, onDeleteTaskClick }) {
   return (
     <ul className="space-y-4 rounded-md bg-slate-200 p-6 shadow">
       {tasks.map((task) => (
-        <li key={task.id} className="flex gap-2">
-          <button
-            onClick={() => onTaskClick(task.id)}
-            className={`w-full rounded-md bg-slate-400 p-2 text-left text-white ${
-              task.isCompleted && "text-green-600 line-through"
-            }`}
-          >
-            {task.title}
-          </button>
+        <li key={task.id} className="flex rounded-md bg-slate-200 p-2">
+          <div className="flex w-full items-stretch justify-between gap-2">
+            <button
+              onClick={() => onTaskClick(task.id)}
+              className={`w-full overflow-hidden break-words rounded-md bg-slate-400 p-2 text-left text-white ${task.isCompleted && "text-green-600 line-through"}`}
+            >
+              {task.title}
+            </button>
 
-          <Button onClick={() => onSeeDetailsClick(task)}>
-            <ChevronRightIcon />
-          </Button>
-
-          <Button onClick={() => onDeleteTaskClick(task.id)}>
-            <TrashIcon />
-          </Button>
+            <div className="flex flex-col gap-2">
+              <Button onClick={() => onSeeDetailsClick(task)}>
+                <ChevronRightIcon />
+              </Button>
+              <Button onClick={() => onDeleteTaskClick(task.id)}>
+                <TrashIcon />
+              </Button>
+            </div>
+          </div>
         </li>
       ))}
     </ul>

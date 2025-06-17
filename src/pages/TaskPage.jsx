@@ -23,8 +23,10 @@ function TaskPage() {
           <Title>Detalhes da tarefa</Title>
         </div>
         <div className="rounded-md bg-slate-200 p-4">
-          <h2 className="text-xl font-bold text-slate-600">{title}</h2>
-          <p className="text-slate-600">{description}</p>
+          <h2 className="break-words text-xl font-bold text-slate-600">
+            {title}
+          </h2>
+          <p className="break-words text-slate-600">{description}</p>
         </div>
       </div>
     </div>
